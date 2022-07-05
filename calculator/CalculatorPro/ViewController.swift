@@ -120,7 +120,6 @@ class ViewController: UIViewController {
         addtoWorking(value: "%")
     }
     @IBAction func div(_ sender: Any) {
-//        div=workings+"00"
         
         addtoWorking(value: "/")
         
