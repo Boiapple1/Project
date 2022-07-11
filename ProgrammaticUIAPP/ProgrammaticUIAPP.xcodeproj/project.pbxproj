@@ -81,7 +81,6 @@
 				025BCCAF2878F45000C37CFA /* MainfrontpageViewController.swift */,
 				025BCCB72879B71A00C37CFA /* ADetailsViewController.swift */,
 				025BCCB22878F49600C37CFA /* Cells */,
-				02BDA421287A575C00A0CEA6 /* ButtonTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -89,6 +88,7 @@
 		025BCCB22878F49600C37CFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				02BDA421287A575C00A0CEA6 /* ButtonTableViewCell.swift */,
 				025BCCB32879276200C37CFA /* MainTableViewCell.swift */,
 			);
 			path = Cells;

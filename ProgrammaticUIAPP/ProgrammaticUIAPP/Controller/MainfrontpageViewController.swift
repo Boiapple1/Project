@@ -53,11 +53,12 @@ extension MainfrontpageViewController:UITableViewDataSource{
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
+        
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 12
         
         
     }
@@ -92,7 +93,7 @@ extension MainfrontpageViewController:UITableViewDataSource{
         case n+8:
             An1 = AnimalDescription.Duck.name
            
-        case n+20:
+        case n+10:
             An1 = AnimalDescription.Deer.name
             
         default:
@@ -104,11 +105,7 @@ extension MainfrontpageViewController:UITableViewDataSource{
                 cell.TImageview.image = UIImage(named: "i \(indexPath.row)")
                 cell.LabelName.text = "\(An1 ?? "")"
                 cell.LabelN.text = "Number= \(indexPath.row)"
-//        self.view.addSubview(self.NumbC)
-//        NumbC.topAnchor.constraint(equalTo:  MainTableViewCell.bottomAnchor, constant: 8).isActive = true
-//        NumbC.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-//        NumbC.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -8).isActive = true
-//        NumbC.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
         if indexPath.row % 2 == 0{
             return cell
         }else{
@@ -140,16 +137,16 @@ extension MainfrontpageViewController:UITableViewDelegate{
             Inf1 = AnimalDescription.Elephants.info
         
         case n+6:
-            An1 = AnimalDescription.Duck.name
-            Inf1 = AnimalDescription.Duck.info
-         
-        case n+8:
-            An1 = AnimalDescription.Panda.name
-            Inf1 = AnimalDescription.Panda.info
-           
-        case n+10:
             An1 = AnimalDescription.Giraffe.name
             Inf1 = AnimalDescription.Giraffe.info
+         
+        case n+8:
+            An1 = AnimalDescription.Duck.name
+            Inf1 = AnimalDescription.Duck.info
+           
+        case n+10:
+            An1 = AnimalDescription.Deer.name
+            Inf1 = AnimalDescription.Deer.info
             
         default:
             An1 = AnimalDescription.bear.name

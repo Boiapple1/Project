@@ -21,11 +21,13 @@ class MainTableViewCell: UITableViewCell {
     }()
     
     lazy var LabelName: UILabel = {
-        let labelN = UILabel(frame: .zero)
-        labelN.translatesAutoresizingMaskIntoConstraints = false
-        labelN.numberOfLines = 0
-        labelN.backgroundColor = .systemYellow
-        return labelN
+        let labelNA = UILabel(frame: .zero)
+        labelNA.translatesAutoresizingMaskIntoConstraints = false
+        labelNA.numberOfLines = 0
+        labelNA.textAlignment = .center
+        labelNA.backgroundColor = .systemYellow
+        labelNA.layer.cornerRadius = 15
+        return labelNA
         
     }()
     
@@ -33,7 +35,9 @@ class MainTableViewCell: UITableViewCell {
         let labelN = UILabel(frame: .zero)
         labelN.translatesAutoresizingMaskIntoConstraints = false
         labelN.numberOfLines = 0
+        labelN.textAlignment = .center
         labelN.backgroundColor = .systemGreen
+        labelN.layer.cornerRadius = 15
         return labelN
         
     }()
@@ -59,10 +63,6 @@ class MainTableViewCell: UITableViewCell {
     private func setUpCellUI(){
         let vstackView = UIStackView(frame: .zero)
         vstackView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        let stepper1 = UIStepper(frame: .zero)
-//        stepper1.translatesAutoresizingMaskIntoConstraints = false
-//        stepper1.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25).isActive = true
         vstackView.spacing = 8
         vstackView.axis = .vertical
         vstackView.distribution = .fillEqually

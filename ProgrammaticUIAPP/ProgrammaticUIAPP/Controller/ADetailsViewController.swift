@@ -14,6 +14,7 @@ class ADetailsViewController: UIViewController {
         imageD.translatesAutoresizingMaskIntoConstraints = false
         imageD.contentMode = .scaleAspectFit
         imageD.backgroundColor = .white
+       
         return imageD
     }()
     
@@ -23,6 +24,7 @@ class ADetailsViewController: UIViewController {
         labelN.textAlignment = .center
         labelN.numberOfLines = 0
         labelN.backgroundColor = .systemBackground
+      
         return labelN
         
     }()
@@ -31,6 +33,7 @@ class ADetailsViewController: UIViewController {
         labelI.translatesAutoresizingMaskIntoConstraints = false
         labelI.textAlignment = .center
         labelI.numberOfLines = 0
+        
         labelI.backgroundColor = .systemBackground
         return labelI
         
