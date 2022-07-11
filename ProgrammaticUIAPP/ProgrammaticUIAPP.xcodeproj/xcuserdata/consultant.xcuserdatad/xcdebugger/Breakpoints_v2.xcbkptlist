@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "27F830B3-6124-477E-9790-C6F999388BE0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "139E9B2A-9BE4-4D80-8769-D79F283D76CA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProgrammaticUIAPP/Controller/MainfrontpageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "setUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "906F44D3-A668-4CF2-ABA8-91F0CFAE4D32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProgrammaticUIAPP/Controller/Cells/MainTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "setUpCellUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06B08D2D-5AA6-416E-98A8-9767E6328D1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProgrammaticUIAPP/Controller/ADetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EACF63BD-E4C9-46AA-9466-A56A838506A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProgrammaticUIAPP/Controller/ADetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "init(ImaN:ANTitle:Inf:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EACF63BD-E4C9-46AA-9466-A56A838506A3 - b85dc8ec5a3e249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProgrammaticUIAPP.ADetailsViewController.__allocating_init(ImaN: Swift.String) -&gt; ProgrammaticUIAPP.ADetailsViewController"
+                  moduleName = "ProgrammaticUIAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/consultant/Documents/GitHub/ProgrammaticUIAPP/ProgrammaticUIAPP/Controller/ADetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "EACF63BD-E4C9-46AA-9466-A56A838506A3 - 64efd539509f2871"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProgrammaticUIAPP.ADetailsViewController.init(ImaN: Swift.String) -&gt; ProgrammaticUIAPP.ADetailsViewController"
+                  moduleName = "ProgrammaticUIAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/consultant/Documents/GitHub/ProgrammaticUIAPP/ProgrammaticUIAPP/Controller/ADetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
