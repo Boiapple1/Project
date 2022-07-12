@@ -16,6 +16,7 @@
 		0208A690287C994900EE7C70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A68F287C994900EE7C70 /* DetailViewController.swift */; };
 		0208A693287C9A7000EE7C70 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A692287C9A7000EE7C70 /* TableViewCell.swift */; };
 		0208A696287C9C0F00EE7C70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A695287C9C0F00EE7C70 /* NetworkManager.swift */; };
+		0208A69A287DCC9400EE7C70 /* savedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A699287DCC9400EE7C70 /* savedata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0208A68F287C994900EE7C70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0208A692287C9A7000EE7C70 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0208A695287C9C0F00EE7C70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0208A699287DCC9400EE7C70 /* savedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = savedata.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				0208A68B287C98EA00EE7C70 /* UIviewExten.swift */,
+				0208A699287DCC9400EE7C70 /* savedata.swift */,
 			);
 			path = Exten;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				0208A67C287C971D00EE7C70 /* MainViewController.swift in Sources */,
 				0208A68C287C98EA00EE7C70 /* UIviewExten.swift in Sources */,
+				0208A69A287DCC9400EE7C70 /* savedata.swift in Sources */,
 				0208A690287C994900EE7C70 /* DetailViewController.swift in Sources */,
 				0208A696287C9C0F00EE7C70 /* NetworkManager.swift in Sources */,
 				0208A693287C9A7000EE7C70 /* TableViewCell.swift in Sources */,

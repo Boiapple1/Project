@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 final class NetworkManager{
     
     
@@ -21,29 +22,39 @@ final class NetworkManager{
 
         
     }
+ 
     
-    func getData(url: URL?, completion: @escaping (Data?, URLResponse) -> Void){
+    
+    func getData(url: URL?, completion: @escaping (Data?) -> Void){
+        var an:String?
+        var urlcell:String?
         
-
-
-                
         guard let url = url else {return}
         
-        self.session.dataTask(with: url){ data, response, error in
-//            guard let data = data else {
-//                return
-//            }
+        self.session.dataTask(with: url){data, response, error in
+            let httpResponse = response as? HTTPURLResponse
             
-            completion(data, response ?? URLResponse())
-
-
-
+            an = httpResponse?.value(forHTTPHeaderField: "picsum-id")
+            urlcell = response?.url?.absoluteString ?? ""
+            Linkandid.inf = .init(link: urlcell ?? "", id: an ?? "")
+            
+            completion(data)
             
         }.resume()
         
     }
 
 
+}
+
+struct Linkandid {
+    let link: String
+    let id: String
+    
+}
+
+extension Linkandid{
+    static var inf = Linkandid(link:"", id: "")
 }
 
 

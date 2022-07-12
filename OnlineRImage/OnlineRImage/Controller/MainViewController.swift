@@ -55,7 +55,7 @@ extension MainViewController:UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 15
         
         
     }
@@ -68,13 +68,11 @@ extension MainViewController:UITableViewDataSource{
             return UITableViewCell()
             
         }
-
-
-
-            return cell
         
-              
- 
+
+            cell.callNetwork()
+            cell.indexrow(ar: indexPath.row)
+            return cell
 
             }
     
@@ -85,9 +83,13 @@ extension MainViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-         
+       
 
-        let detailView = DetailViewController(ImaN: "", ANTitle: " ", Inf: "")
+        let detailView = DetailViewController()
+        //print(indexPath.row)
+        let dic2 = savedata.share1.dic1
+        print(dic2)
+        detailView.callNetwork1(ANTitle: "")
         self.navigationController?.pushViewController(detailView, animated: true)
 
     }

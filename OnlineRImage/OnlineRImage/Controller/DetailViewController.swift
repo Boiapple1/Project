@@ -39,51 +39,20 @@ class DetailViewController: UIViewController {
         
     }()
     
-    let ANTitle: String
-    let ImaN: String
-    let Inf: String
-    init(ImaN:String, ANTitle: String, Inf: String){
-        self.ANTitle = ANTitle
-        self.ImaN = ImaN
-        self.Inf = Inf
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray4
         self.setUpUI()
         
+        
 
         
 
     }
-//    @objc
-//    func callNetwork(){
-//        let url = URL(string: "\(ImaN)")
-//        print(ImaN)
-//        NetworkManager.shared.getData(url: url){ data, response in
-//            DispatchQueue.main.async {
-//                let httpResponse = response as? HTTPURLResponse
-//                let an = httpResponse?.value(forHTTPHeaderField: "picsum-id")
-//                let urlcell = response.url
-////                TableViewCell.urlc = "\(urlcell)"
-//                
-//                if let data = data{
-//                    self.imageD.image = UIImage(data: data)
-//                    self.AN.text = "picsum-id= \(an ?? "")"
-//                    self.AInf.text = "\(urlcell?.absoluteString ?? "unknown"))"
-//                    
-//                }
-//                    
-//            }
-//        }
-//    }
+    
     
     private func setUpUI(){
         self.view.addSubview(self.imageD)
@@ -104,5 +73,22 @@ class DetailViewController: UIViewController {
         
         
     }
+    @objc
+    func callNetwork1(ANTitle:String){
+        let url = URL(string: "\(ANTitle)")
+        print(ANTitle)
+        
+        NetworkManager.shared.getData(url: url){ data in
+            DispatchQueue.main.async{ [self] in
+                if let data = data{
+                    
+                    self.imageD.image = UIImage(data: data)
+                    
+                }
+            }
+        }
+    }
 
 }
+
+
