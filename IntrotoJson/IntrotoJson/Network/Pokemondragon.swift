@@ -6,66 +6,41 @@
 //
 
 import Foundation
+
+struct Pokemondragon{
+    var damagerelations: damagerelations
+    let game_indices:[gameindices1]
+    let generations: nameandlink
+    let id: Int
+    let move_damage_class: nameandlink
+    let move:[nameandlink]
+    let name: String
+    let pokemon:[pokemon1]
+    
+}
+struct damagerelations{
+    let double_damage_from: [nameandlink]
+    let double_damage_to:[nameandlink]
+    let half_damage_from:[nameandlink]
+    let half_damage_to:[nameandlink]
+    let no_damage_from:[Any?]
+    let no_damage_to:[nameandlink]
+}
 struct nameandlink{
     let name: String
     let url: String
     
 }
-struct Pokemondragon{
-    var damagerelations: damagerelations1 
-    let game_indices:[gameindices1]
-    let generations: nameandlink
-    let id: Int
-    let move_damage_class: nameandlink
-    let move:[moves1]
-    let name: String
-    let pokemon:[pokemon1]
-    
-}
-struct damagerelations1{
-    let double_damage_from:[double_damage_from1]
-    let double_damage_to:[double_damage_to1]
-    let half_damage_from:[half_damage_from1]
-    let half_damage_to:[half_damage_to1]
-    let no_damage_from:[no_damage_from1]
-}
-struct double_damage_from1{
-    let double_damage_from: nameandlink
-}
-struct double_damage_to1{
-    let double_damage_to: nameandlink
-}
-struct half_damage_from1{
-    let half_damage_from: nameandlink
-}
-struct half_damage_to1{
-    let half_damage_to: nameandlink
-}
-struct no_damage_from1{
-    
-}
-struct no_damage_to{
-    let no_damage_to: nameandlink
-}
 
 struct gameindices1{
-    let game_indices: Int
-    let generation: [generation1]
+    let game_index: Int
+    let generation: nameandlink
     
 }
-struct generation1{
-    let generation: nameandlink
-}
 
-struct moves1{
-    let moves1: nameandlink
-}
 struct pokemon1{
-    let pokemon1:[pokemon2]
+    let pokemon:nameandlink
     let slot: Int
-}
-struct pokemon2{
-    let pokemon2: nameandlink
 }
 
 
