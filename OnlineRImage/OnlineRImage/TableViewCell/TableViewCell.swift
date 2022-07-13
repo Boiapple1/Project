@@ -78,9 +78,11 @@ class TableViewCell: UITableViewCell {
         vstackView.translatesAutoresizingMaskIntoConstraints = false
         vstackView.spacing = 8
         vstackView.axis = .vertical
+        
         vstackView.distribution = .fillEqually
         vstackView.addArrangedSubview(self.LabelName)
         vstackView.addArrangedSubview(self.LabelN)
+        
         let hstackView = UIStackView(frame: .zero)
         hstackView.translatesAutoresizingMaskIntoConstraints = false
         hstackView.spacing = 8
