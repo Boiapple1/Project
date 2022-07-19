@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
     var pokemonD = [PokemonDetail]()
     var pokemonurl: Pokemonapi?
     var currentpo = 0
+    var currentpokemon=0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,25 +68,32 @@ class MainViewController: UIViewController {
                 switch result {
                     case .success(let list):
                         self.pokemonurl = list
-                        for pokemonResource in list.results {
-                            myGroup.enter()
-
-                            self.network.getPokemon(url: pokemonResource.url) { pokeResult in
-                                switch pokeResult {
-                                    case .success(let pokemon):
-                                        self.pokemonD.append(pokemon)
-                                        print(pokemon)
-                                        DispatchQueue.main.async {
-                                            self.pokemontable.reloadData()
-                                        }
-                                        myGroup.leave()
-
-                                    case .failure(let error):
-                                        print("OOPS! We screwed up.")
-                                        print(error)
-                                }
-                            }
-                        }
+                    for n in list.results{
+                        
+                        namelinkCache.shared.setnamelinkData(data: n.url, key: "\(n.name)")
+                        self.currentpokemon += 1
+                    }
+                    
+                  
+//                        for pokemonResource in list.results {
+//                            myGroup.enter()
+//
+//                            self.network.getPokemon(url: pokemonResource.url) { pokeResult in
+//                                switch pokeResult {
+//                                    case .success(let pokemon):
+//                                        self.pokemonD.append(pokemon)
+//                                        print(pokemon)
+//                                        DispatchQueue.main.async {
+//                                            self.pokemontable.reloadData()
+//                                        }
+//                                        myGroup.leave()
+//
+//                                    case .failure(let error):
+//                                        print("OOPS! We screwed up.")
+//                                        print(error)
+//                                }
+//                            }
+//                        }
                         myGroup.notify(queue: .main) {
                             self.pokemontable.reloadData()
                         }

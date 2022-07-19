@@ -62,8 +62,8 @@
             filePath = "Superpokemonapp/servicio/NetworkM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "NetworkManager"
             landmarkType = "21">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Superpokemonapp/servicio/NetworkM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getPokemon(url:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Superpokemonapp/servicio/NetworkM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "getPokemon(url:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Superpokemonapp/servicio/NetworkM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "getPokemon(url:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "MainViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "MainViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -303,7 +303,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
-            endingLineNumber = "159">
+            endingLineNumber = "159"
+            landmarkName = "initiateErrorMsg(err:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -317,7 +319,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
-            endingLineNumber = "160">
+            endingLineNumber = "160"
+            landmarkName = "MainViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,8 +334,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "requestP()"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,8 +350,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "requestP()"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,8 +366,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "initiateErrorMsg(err:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,8 +382,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153">
+            startingLineNumber = "161"
+            endingLineNumber = "161">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -392,8 +396,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "requestP()"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,8 +412,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "MainViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -440,8 +444,8 @@
             filePath = "Superpokemonapp/Controllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "requestP()"
             landmarkType = "7">
          </BreakpointContent>

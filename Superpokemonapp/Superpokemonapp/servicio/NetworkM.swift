@@ -12,23 +12,13 @@ import Foundation
 final class NetworkManager{
     static let shared: NetworkManager = NetworkManager()
 
-
-
     private let session: URLSession
     
     init(session: URLSession = URLSession.shared) {
         self.session = session
-        
-        
     }
  
 }
-
-
-
-
-
-
 extension NetworkManager{
     
     func getPokemonList(url1: String, callback: @escaping (Result<Pokemonapi, NetworkError>) -> Void) {
@@ -39,6 +29,9 @@ extension NetworkManager{
 
         let task = session.dataTask(with: url) { data, response, error in
 
+            
+            
+            
             // Check that we didn't screw up.
             if let error = error {
                 callback(.failure(.other(error.localizedDescription as! Error)))
@@ -71,6 +64,7 @@ extension NetworkManager{
             do {
                 let result = try decoder.decode(Pokemonapi.self, from: data)
                 callback(.success(result))
+//                self.getnamelinkData(data: result,)
             } catch {
                 callback(.failure(.decodeError(error)))
                 return
