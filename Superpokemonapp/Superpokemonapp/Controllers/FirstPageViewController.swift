@@ -58,7 +58,10 @@ class FirstPageViewController: UIViewController {
     func ButtonPressed() {
         
         let detailView = MainViewController()
+        
         self.navigationController?.pushViewController(detailView, animated: true)
+        
+        
     }
     
 

@@ -11,6 +11,8 @@
 		0205CF38288615F40037BBF4 /* GifEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205CF37288615F40037BBF4 /* GifEx.swift */; };
 		0205CF3A28866B2A0037BBF4 /* imageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205CF3928866B2A0037BBF4 /* imageCache.swift */; };
 		0205CF3C28866DCF0037BBF4 /* UIMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205CF3B28866DCF0037BBF4 /* UIMVC.swift */; };
+		0205CF3E2886EEF80037BBF4 /* gifcache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205CF3D2886EEF80037BBF4 /* gifcache.swift */; };
+		0205CF40288726950037BBF4 /* cachelinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205CF3F288726950037BBF4 /* cachelinks.swift */; };
 		021D56762883FEAA00738AA1 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D56752883FEAA00738AA1 /* FirstPageViewController.swift */; };
 		021D56782884CCF400738AA1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D56772884CCF400738AA1 /* NetworkError.swift */; };
 		022EC58028839ECF00119F32 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EC57F28839ECF00119F32 /* DetailViewController.swift */; };
@@ -33,6 +35,8 @@
 		0205CF37288615F40037BBF4 /* GifEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifEx.swift; sourceTree = "<group>"; };
 		0205CF3928866B2A0037BBF4 /* imageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCache.swift; sourceTree = "<group>"; };
 		0205CF3B28866DCF0037BBF4 /* UIMVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMVC.swift; sourceTree = "<group>"; };
+		0205CF3D2886EEF80037BBF4 /* gifcache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifcache.swift; sourceTree = "<group>"; };
+		0205CF3F288726950037BBF4 /* cachelinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cachelinks.swift; sourceTree = "<group>"; };
 		021D56752883FEAA00738AA1 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		021D56772884CCF400738AA1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		022EC57F28839ECF00119F32 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				02A28C292881E6310092684E /* NetworkM.swift */,
 				021D56772884CCF400738AA1 /* NetworkError.swift */,
 				0205CF3928866B2A0037BBF4 /* imageCache.swift */,
+				0205CF3F288726950037BBF4 /* cachelinks.swift */,
+				0205CF3D2886EEF80037BBF4 /* gifcache.swift */,
 			);
 			path = servicio;
 			sourceTree = "<group>";
@@ -217,9 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0205CF40288726950037BBF4 /* cachelinks.swift in Sources */,
 				022EC58028839ECF00119F32 /* DetailViewController.swift in Sources */,
 				02A28C2A2881E6310092684E /* NetworkM.swift in Sources */,
 				021D56762883FEAA00738AA1 /* FirstPageViewController.swift in Sources */,
+				0205CF3E2886EEF80037BBF4 /* gifcache.swift in Sources */,
 				02A28C332882661C0092684E /* UITableViewcell.swift in Sources */,
 				02A28C282881A7640092684E /* PokemonTableViewCell.swift in Sources */,
 				0205CF38288615F40037BBF4 /* GifEx.swift in Sources */,

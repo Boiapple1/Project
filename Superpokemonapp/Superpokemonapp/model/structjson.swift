@@ -63,7 +63,7 @@ struct Sprites: Decodable{
      let other: others
 }
 struct Stats: Decodable{
-    let base_stat: Int?
+    let baseStat: Float
     let effort: Int
     let stat: nameandlink
     

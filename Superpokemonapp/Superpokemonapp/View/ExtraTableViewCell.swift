@@ -163,7 +163,7 @@ class ExtraTableViewCell: UITableViewCell {
         }
         else if(pokemon.types[0]?.type.name == "psychic"){
             self.backgroundColor = .systemPink
-            imageD2.image = UIImage.gifImageWithURL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSclVeoo6JtkS8cT23CQ0pdtI3uYhxMLRGyhy0P5NnVNuIo8c8dM_J5fMAN6vrOE0_B74A&usqp=CAU")
+            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/4a/e0/2b/4ae02b3e7b71aa7b38863f25aa3225b1.gif")
            
         }
         else if(pokemon.types[0]?.type.name == "bug"){
@@ -177,8 +177,8 @@ class ExtraTableViewCell: UITableViewCell {
         }
         else if(pokemon.types[0]?.type.name == "fighting"){
             self.backgroundColor = .systemOrange
-            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/e9/d9/d4/e9d9d40eef4ab994670c08524e35bbdb.gif")
-            imageD.backgroundColor = .green
+            imageD2.image = UIImage.gifImageWithURL("https://c.tenor.com/2co4feAipsYAAAAM/hasbulla-hasbik.gif")
+            
         }
         else if(pokemon.types[0]?.type.name == "ghost"){
             self.backgroundColor = .black
@@ -192,16 +192,16 @@ class ExtraTableViewCell: UITableViewCell {
         }
         else if(pokemon.types[0]?.type.name == "dragon"){
             self.backgroundColor = .systemPurple
-            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/77/cd/50/77cd50e19ca918527863e0ead8d1c07c.gif")
+            imageD2.image = UIImage.gifImageWithURL("https://thumbs.gfycat.com/ConstantDefinitiveHoatzin-max-1mb.gif")
             
         }
         else if(pokemon.types[0]?.type.name == "steel"){
             self.backgroundColor = .darkGray
-            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/77/cd/50/77cd50e19ca918527863e0ead8d1c07c.gif")
+            imageD2.image = UIImage.gifImageWithURL("https://media1.giphy.com/media/d7ncQTkyXi0EnyEMqQ/giphy-downsized-large.gif")
         }
         else if(pokemon.types[0]?.type.name == "fairy"){
             self.backgroundColor = .systemPink
-            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/77/cd/50/77cd50e19ca918527863e0ead8d1c07c.gif")
+            imageD2.image = UIImage.gifImageWithURL("https://i.pinimg.com/originals/0d/75/8c/0d758c5bf49becbf3c04fcf31a62efe7.gif")
         }
         
         self.AN.text = pokemon.name
@@ -230,11 +230,7 @@ class ExtraTableViewCell: UITableViewCell {
         self.Abi1.text = "\(abi1)"
         
         if pokemon.abilities.count != 1 {
-        guard let abi2 = pokemon.abilities[1]?.ability.name else{
-            self.Abi2.text = "none"
-            return
-        }
-        self.Abi2.text = "\(abi2)"
+        self.Abi2.text = "\(pokemon.abilities[1]?.ability.name ?? "")"
         }else{
             self.Abi2.text = "none"
         }
@@ -306,7 +302,7 @@ class ExtraTableViewCell: UITableViewCell {
         imageD2.heightAnchor.constraint(equalToConstant: 220).isActive = true
 
         tableV.backgroundColor = .systemPink
-        tableV.heightAnchor.constraint(equalToConstant: 315).isActive = true
+        tableV.heightAnchor.constraint(equalToConstant: 325).isActive = true
         tableV.topAnchor.constraint(equalTo: mButton.bottomAnchor,constant: 8).isActive = true
         tableV.bottomAnchor.constraint(equalTo: AbiNa.topAnchor, constant: -8).isActive = true
         tableV.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
