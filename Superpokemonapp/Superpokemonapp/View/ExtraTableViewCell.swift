@@ -290,6 +290,7 @@ class ExtraTableViewCell: UITableViewCell {
         Abi1.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
         Abi1.widthAnchor.constraint(equalToConstant: 200).isActive = true
         Abi1.heightAnchor.constraint(equalToConstant: 44).isActive = true
+
         
         imageD.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         imageD.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
@@ -300,8 +301,10 @@ class ExtraTableViewCell: UITableViewCell {
         imageD2.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
         imageD2.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,constant: -8).isActive = true
         imageD2.heightAnchor.constraint(equalToConstant: 220).isActive = true
-
-        tableV.backgroundColor = .systemPink
+        
+        tableV.layer.cornerRadius = 15
+        
+        tableV.backgroundColor = .clear
         tableV.heightAnchor.constraint(equalToConstant: 325).isActive = true
         tableV.topAnchor.constraint(equalTo: mButton.bottomAnchor,constant: 8).isActive = true
         tableV.bottomAnchor.constraint(equalTo: AbiNa.topAnchor, constant: -8).isActive = true

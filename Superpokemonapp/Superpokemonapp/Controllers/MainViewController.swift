@@ -70,30 +70,30 @@ class MainViewController: UIViewController {
                         self.pokemonurl = list
                     for n in list.results{
                         
-                        namelinkCache.shared.setnamelinkData(data: n.url, key: "\(n.name)")
+                        namelinkCache.shared.setnamelinkData(data: n.url , key: "\(self.currentpokemon)")
                         self.currentpokemon += 1
                     }
                     
                   
-//                        for pokemonResource in list.results {
-//                            myGroup.enter()
-//
-//                            self.network.getPokemon(url: pokemonResource.url) { pokeResult in
-//                                switch pokeResult {
-//                                    case .success(let pokemon):
-//                                        self.pokemonD.append(pokemon)
-//                                        print(pokemon)
-//                                        DispatchQueue.main.async {
-//                                            self.pokemontable.reloadData()
-//                                        }
-//                                        myGroup.leave()
-//
-//                                    case .failure(let error):
-//                                        print("OOPS! We screwed up.")
-//                                        print(error)
-//                                }
-//                            }
-//                        }
+                        for pokemonResource in list.results {
+                            myGroup.enter()
+
+                            self.network.getPokemon(url: pokemonResource.url) { pokeResult in
+                                switch pokeResult {
+                                    case .success(let pokemon):
+                                        self.pokemonD.append(pokemon)
+                                        //print(pokemon)
+                                        DispatchQueue.main.async {
+                                            self.pokemontable.reloadData()
+                                        }
+                                        myGroup.leave()
+
+                                    case .failure(let error):
+                                        print("OOPS! We screwed up.")
+                                        print(error)
+                                }
+                            }
+                        }
                         myGroup.notify(queue: .main) {
                             self.pokemontable.reloadData()
                         }
@@ -126,10 +126,10 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.reusedId, for: indexPath) as? PokemonTableViewCell else {
             return UITableViewCell()
         }
-        //cell.delegate = self
+        print(namelinkCache.shared.getnamelinkData(key: "\(indexPath.row)") ?? "nothing here")
         cell.backgroundColor = .clear
         cell.accessoryType = .disclosureIndicator
-        cell.configure(with: self.pokemonD[indexPath.row])
+        cell.configure(with: self.pokemonD[indexPath.row], N: indexPath.row)
         return cell
     }
 }

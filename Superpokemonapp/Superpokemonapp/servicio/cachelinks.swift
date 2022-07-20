@@ -11,26 +11,26 @@ class namelinkCache {
     
     static let shared = namelinkCache()
     
-    private let cache1: NSCache<NSString, NSData>
+    private let cache1: NSCache<NSString, NSString>
     
     private init() {
-        self.cache1 = NSCache<NSString, NSData>()
+        self.cache1 = NSCache<NSString, NSString>()
     }
     
 }
 
 extension namelinkCache {
     
-    func setnamelinkData(data: Data, key: String) {
+    func setnamelinkData(data: String, key: String) {
         let nsKey = NSString(string: key)
-        let object = NSData(data: data)
+        let object = NSString(string: data)
         self.cache1.setObject(object, forKey: nsKey)
     }
     
-    func getnamelinkData(key: String) -> Data? {
+    func getnamelinkData(key: String) -> String? {
         let nsKey = NSString(string: key)
         guard let object = self.cache1.object(forKey: nsKey) else { return nil }
-        return Data(referencing: object)
+        return String(object)
     }
     
 }

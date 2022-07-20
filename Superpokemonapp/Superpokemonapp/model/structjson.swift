@@ -17,7 +17,7 @@ struct Pokemonapi: Decodable{
 }
 
 struct Pokemon: Decodable{
-    let name: String?
+    let name: String
     let url: String
     var details: [PokemonDetail]?
     

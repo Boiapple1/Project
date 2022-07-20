@@ -146,8 +146,10 @@ class PokemonTableViewCell: UITableViewCell {
         
     }
     
-    func configure(with pokemon: PokemonDetail) {
+    func configure(with pokemon: PokemonDetail, N: Int) {
+
         self.pokemons = pokemon
+        
         self.pokename.text = pokemon.name
         self.PokeNum.text = "\(pokemon.id)"
 
