@@ -11,11 +11,8 @@ protocol PokemonCellErrorDelegate: AnyObject {
 }
 
 class PokemonTableViewCell: UITableViewCell {
-
     static let reusedId = "\(PokemonTableViewCell.self)"
-    let network: NetworkManager = NetworkManager()
-    
-    
+ 
     
     lazy var PokeImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -30,7 +27,6 @@ class PokemonTableViewCell: UITableViewCell {
         return imageView
     }()
 
-
     lazy var pokename: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,10 +36,8 @@ class PokemonTableViewCell: UITableViewCell {
         label.textColor = .black
         label.backgroundColor = .white
         label.layer.masksToBounds = true
-//        label.setContentHuggingPriority(.required, for: .vertical)
         label.text = "Pokemon Name"
 
-        
         return label
     }()
 
@@ -61,6 +55,7 @@ class PokemonTableViewCell: UITableViewCell {
         return label
 
     }()
+
     lazy var PokeNum: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -111,7 +106,6 @@ class PokemonTableViewCell: UITableViewCell {
 //
     
     private func setUpUI() {
-        
         let hStack = UIStackView(axis: .horizontal, spacing: 8, distribution: .fill)
         let vStackRight = UIStackView(axis: .vertical, spacing: 8, distribution: .fill)
         let vStackLeft = UIStackView(axis: .vertical, spacing: 8, distribution: .fill)
@@ -143,12 +137,13 @@ class PokemonTableViewCell: UITableViewCell {
         self.contentView.addSubview(hStack)
         
         hStack.bindToSuperView()
+    }
+    func conf(N: Int){
         
     }
-    
     func configure(with pokemon: PokemonDetail, N: Int) {
-
         self.pokemons = pokemon
+        
         
         self.pokename.text = pokemon.name
         self.PokeNum.text = "\(pokemon.id)"
@@ -215,8 +210,6 @@ class PokemonTableViewCell: UITableViewCell {
             break
         }
         
-        
-
         if pokemon.types.count != 1 {
             self.PokeType2.text = "\(pokemon.types[1]?.type.name ?? "")"
             
@@ -262,25 +255,23 @@ class PokemonTableViewCell: UITableViewCell {
 
             default:
                 break
-            }// self.PokeType2.text = "\(pokemon.types[1].type.name)"
+            }
             
-        }else{
-             self.PokeType2.text = ""
+        } else {
+            self.PokeType2.text = ""
             self.PokeType2.backgroundColor = .white
         }
         
         if let imageData = ImageCache.shared.getImageData(key: "\(pokemon.id)") {
-            print("Image found in cache")
+            //print("Image found in cache")
             self.PokeImage.image = UIImage(data: imageData)
             return
         }
-       // let url1s = URL(string: pokemon.sprites.frontDefault)
-                       
-        network.fetchImageData1(urlStr: pokemon.sprites.frontDefault) { result in
+        NetworkManager.shared.fetchImageData1(urlStr: pokemon.sprites.frontDefault) { result in
             switch result {
             case .success(let imageData):
                 DispatchQueue.main.async {
-                    print("Image pulled from network")
+                    //print("Image pulled from network")
                     ImageCache.shared.setImageData(data: imageData, key: "\(pokemon.id)")
 
                     if pokemon.id == (self.pokemons?.id ?? -1) {

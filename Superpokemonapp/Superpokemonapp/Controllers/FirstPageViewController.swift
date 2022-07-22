@@ -17,8 +17,6 @@ class FirstPageViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .black
         imageView.image = UIImage.gifImageWithURL("https://media0.giphy.com/media/Gm7LdndVpiCs0/giphy.gif?cid=ecf05e47hzmww5ruco4bzwijk8ciwk7959tr0fqg9ip38azw&rid=giphy.gif&ct=g")
-//        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-//        imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         return imageView
     }()
 
@@ -58,7 +56,7 @@ class FirstPageViewController: UIViewController {
     func ButtonPressed() {
         
         let detailView = MainViewController()
-        
+        //detailView.requestP()
         self.navigationController?.pushViewController(detailView, animated: true)
         
         
@@ -68,15 +66,4 @@ class FirstPageViewController: UIViewController {
 
 
 }
-//extension FirstPageViewController: UIViewControllerTransitioningDelegate{
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//
-//
-//        let detailView = MainViewController()
-//        //print(indexPath.row)
-//
-//        self.navigationController?.pushViewController(detailView, animated: true)
-//
-//    }
-//}
+

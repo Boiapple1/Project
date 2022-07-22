@@ -41,7 +41,7 @@ class TableViewCell: UITableViewCell {
     func configure3(with pokemon: PokemonDetail, N: Int) {
         self.pokemons3 = pokemon
         self.Label1.text = "\(pokemon.stats[N].stat.name): \(pokemon.stats[N].baseStat)"
-        self.slide1.progress = (pokemon.stats[N].baseStat) * 0.01
+        self.slide1.progress = ((pokemon.stats[N].baseStat) * 0.01)/2
             switch pokemon.types[0]?.type.name ?? "" {
             case "grass":
                 self.slide1.progressTintColor = .green

@@ -23,31 +23,32 @@ class MainViewController: UIViewController {
         table.register(PokemonTableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.reusedId)
         return table
     }()
+
     lazy var PokeImage2: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "7")
-        //.backgroundColor = .clear
         return imageView
     }()
 
     var pokemonD = [PokemonDetail]()
     var pokemonurl: Pokemonapi?
+    var currentpo1 = 1
+    var currentpo2 = 0
     var currentpo = 0
-    var currentpokemon=0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .clear
         self.setTableView()
-        self.pokemontable.reloadData()
+
         self.requestP()
         title = "Pokemon List"
-        
     }
 
-    private func requestP() {
+    func requestP() {
         let myGroup = DispatchGroup()
 
         var urls: String?
@@ -62,58 +63,58 @@ class MainViewController: UIViewController {
             default:
                 return
         }
-        DispatchQueue.main.async {
-            self.network.getPokemonList(url1: urls ?? "") { result in
 
-                switch result {
-                    case .success(let list):
-                        self.pokemonurl = list
-                    for n in list.results{
-                        
-                        namelinkCache.shared.setnamelinkData(data: n.url , key: "\(self.currentpokemon)")
-                        self.currentpokemon += 1
-                    }
-                    
-                  
-                        for pokemonResource in list.results {
-                            myGroup.enter()
+        self.network.getPokemonList(url1: urls ?? "") { [self] result in
 
-                            self.network.getPokemon(url: pokemonResource.url) { pokeResult in
-                                switch pokeResult {
-                                    case .success(let pokemon):
-                                        self.pokemonD.append(pokemon)
-                                        //print(pokemon)
-                                        DispatchQueue.main.async {
-                                            self.pokemontable.reloadData()
-                                        }
-                                        myGroup.leave()
+            switch result {
+                case .success(let list):
+                    self.pokemonurl = list
 
-                                    case .failure(let error):
-                                        print("OOPS! We screwed up.")
-                                        print(error)
-                                }
+                    for pokemonResource in list.results {
+                        myGroup.enter()
+
+                        self.network.getPokemon(url: pokemonResource.url) { [self] pokeResult in
+                            switch pokeResult {
+                                case .success(let pokemon):
+                                    self.pokemonD.append(pokemon)
+                                    
+                                    myGroup.leave()
+                                
+                                
+                           
+
+                                case .failure(let error):
+                                    print("OOPS! We screwed up.")
+                                    print(error)
                             }
                         }
-                        myGroup.notify(queue: .main) {
-                            self.pokemontable.reloadData()
-                        }
-                    case .failure(let error):
-                        print("OOPS! We screwed up.")
-                        print(error)
-
-                        self.presentNetworkErrorAlert(error: error)
+                    }
+                    myGroup.notify(queue: .main) {
+                        self.pokemontable.reloadData()
+                        
+                        
+                    
+                
+                    
                 }
+                case .failure(let error):
+                    print("OOPS! We screwed up.")
+                    print(error)
+
+                    self.presentNetworkErrorAlert(error: error)
             }
+            
+            
         }
+        
     }
 
     func setTableView() {
-        self.view.addSubview(PokeImage2)
+        self.view.addSubview(self.PokeImage2)
         self.view.backgroundColor = .black
         self.view.addSubview(self.pokemontable)
         self.pokemontable.bindToSuperView()
         self.PokeImage2.bindToSuperView()
-        
     }
 }
 
@@ -126,10 +127,13 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.reusedId, for: indexPath) as? PokemonTableViewCell else {
             return UITableViewCell()
         }
-        print(namelinkCache.shared.getnamelinkData(key: "\(indexPath.row)") ?? "nothing here")
         cell.backgroundColor = .clear
         cell.accessoryType = .disclosureIndicator
+      
         cell.configure(with: self.pokemonD[indexPath.row], N: indexPath.row)
+
+        
+
         return cell
     }
 }
@@ -137,7 +141,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailView = DetailViewController()
-        // print(indexPath.row)
+
         detailView.configure(with: self.pokemonD[indexPath.row])
 
         self.navigationController?.pushViewController(detailView, animated: true)
