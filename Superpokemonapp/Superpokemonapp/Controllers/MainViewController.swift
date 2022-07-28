@@ -162,3 +162,4 @@ extension MainViewController: PokemonCellErrorDelegate {
         self.presentNetworkErrorAlert(error: err)
     }
 }
+
