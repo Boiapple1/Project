@@ -92,25 +92,7 @@ class CoreDataManager {
 
         return albums
     }
-    func getone()-> [Album]{
-        let fetchRequest: NSFetchRequest<Album>
-        fetchRequest = Album.fetchRequest()
 
-        // Get a reference to a NSManagedObjectContext
-        let context = persistentContainer.viewContext
-
-        // Fetch all objects of one Entity type
-
-        do {
-            // Perform Fetch Request
-            let objects = try context.fetch(fetchRequest)
-            return objects
-        } catch {
-            print("Unable to Fetch Workouts, (\(error))")
-        }
-        return []
-    }
-    
     
     
     func deleteAllData(_ entity:String) {
@@ -160,18 +142,6 @@ class CoreDataManager {
         self.saveContext()
     }
     
-    
-//    func Favo(Alname1: String, Arname1:String, AlImage1: String, Gen1: String, ReDate1: String, tf: Bool) -> Favorites?{
-//        let context = self.persistentContainer.viewContext
-//        guard let entity = NSEntityDescription.entity(forEntityName: "Favorites", in: context) else { return nil }
-//        
-//        let favorites = Favorites(entity: entity, insertInto: context)
-//        favorites.favoritemusic = tf
-//        favorites.album = self.Alb(Alname: Alname1, Arname: Arname1, AlImage: AlImage1, Gen: Gen1, ReDate: ReDate1)
-// 
-//        return favorites
-//        
-//    }
     
     func Alb(Alname: String, Arname:String, AlImage: String, Gen: String, ReDate: String, id1: Int ) -> Album?{
         let context = self.persistentContainer.viewContext

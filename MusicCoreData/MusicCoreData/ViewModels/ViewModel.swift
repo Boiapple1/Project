@@ -21,6 +21,14 @@ protocol MusicViewModelAttributes {
     func musicImage(for index: Int, completion: @escaping (Data?) -> Void)
  
 }
+protocol CoreManagement {
+    func makefav(index: Int)
+    func loadfav()
+    func getnum() -> Int
+    func getalbumInfo() -> [Album]
+    func deleteall()
+    func deleteFav(inds: String) 
+}
 
 typealias MusicModelType = MusicViewModelCore & MusicViewModelAttributes
 
@@ -154,7 +162,7 @@ extension MusicViewModel: MusicViewModelAttributes {
    
     
 }
-extension MusicViewModel{
+extension MusicViewModel: CoreManagement{
 
 
     
@@ -181,9 +189,7 @@ extension MusicViewModel{
         //let a = self.manager.getone()
         return a
     }
-    func requestinfo() -> Any?{
-        return self.favorites
-    }
+
  
     func deleteall(){
         self.manager.deleteAllData("Album")

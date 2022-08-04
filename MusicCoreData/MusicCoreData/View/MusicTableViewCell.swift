@@ -183,44 +183,25 @@ class MusicTableViewCell: UITableViewCell {
    
     @objc
     func ButtonPressed() {
-        //inD = [self.ind:self.n]
+
+        if self.mButton.backgroundColor == .red{
+            n = false
+        }
+        
         if n == true {
         delegate?.onCellModelChange(cell: self, model: .second)
             self.musicM?.makefav(index: ind ?? 0)
             self.musicM?.loadfav()
-//            self.num1 = (num1 ?? 0) + 1
-            
 
         }
+        
         if n == false {
             delegate?.onCellModelChange(cell: self, model: .first)
             self.mButton.backgroundColor = .white
-//            self.musicM?.deleteFav(inds: num1 ?? 0)
-//            self.num1 = (num1 ?? 0) - 1
-            //self.musicM?.deleteall()
-            self.musicM?.deleteFav(inds: ind2 ?? "")
-            print(ind2)
-        }
-       
-//
-//            mButton.backgroundColor = UIColor.red
-//            self.musicM?.makefav(index: ind!)
-//        self.musicM?.loadfav()
-        
-         let a = self.musicM?.getalbumInfo()
-         print(a as Any)
-      
 
-    
-           // mButton.backgroundColor = UIColor.white
-            //self.musicM?.deleteFav()
-        //print(ind)
-       // self.musicM?.deleteall()
-//            self.inD[ind] = 0
-       // print(self.musicM?.requestinfo() as Any)
-      
-           
-        
+            self.musicM?.deleteFav(inds: ind2 ?? "")
+         
+        }
         }
     }
     

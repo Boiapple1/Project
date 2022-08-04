@@ -186,6 +186,7 @@ class DetailTableViewCell: UITableViewCell {
     var ind1: Int?
     func configure1(musicVM: MusicModelType, index: Int) {
         self.ind1 = index
+        self.names = musicVM.MusicArtist(for: index) ?? ""
         self.genres.text = musicVM.MusicGenres(for: index)
         self.Name.text = musicVM.MusicArtist(for: index)
         self.Album.text = musicVM.MusicTitle(for: index)
@@ -208,10 +209,11 @@ class DetailTableViewCell: UITableViewCell {
     
     
     var musicM1: MusicViewModel?
+    var names: String = ""
     var ind: Int?
     func configure2(musicVM: [Album], index: Int, musicVM1: MusicViewModel) {
         self.ind = index
-        //self.musicM = musicVM[index].albumname
+        self.names = musicVM[index].artistname ?? ""
         self.Name.text = musicVM[index].artistname
         self.Album.text = musicVM[index].albumname
         self.genres.text = musicVM[index].genres
@@ -251,7 +253,27 @@ class DetailTableViewCell: UITableViewCell {
     @objc
     func ButtonPressed() {
 
+        if self.mButton.backgroundColor == .red{
+            n = false
+        }
+        if n == true {
+       
+            self.musicM?.makefav(index: ind ?? 0)
+            self.musicM?.loadfav()
+//            self.num1 = (num1 ?? 0) + 1
+           
 
+        }
+        
+        if n == false {
+  
+            self.mButton.backgroundColor = .white
+//            self.musicM?.deleteFav(inds: num1 ?? 0)
+//            self.num1 = (num1 ?? 0) - 1
+            //self.musicM?.deleteall()
+            self.musicM?.deleteFav(inds: names )
+            //print(ind2)
+        }
 }
 
 }

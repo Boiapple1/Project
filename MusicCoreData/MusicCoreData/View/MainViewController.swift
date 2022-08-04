@@ -30,6 +30,8 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .dark
 
         let tab1 = UINavigationController(rootViewController:Tab1ViewController(vm: MusicViewModel(networkManager: NetworkManager()), elements: elements, vm1:MusicViewModel(networkManager: NetworkManager())))
         let tab2 = UINavigationController(rootViewController:Tab2ViewController(vm: MusicViewModel(networkManager: NetworkManager()), elements: elements, vm1: MusicViewModel(networkManager: NetworkManager())))
@@ -39,7 +41,7 @@ class MainViewController: UITabBarController {
         
         tabBar.unselectedItemTintColor = .white
         self.setViewControllers([tab1,tab2], animated: false)
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .systemBackground
      
 
         self.tabBar.items?[1].setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -96,11 +98,9 @@ class Tab2ViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .clear
+        self.view.backgroundColor = .systemBackground
         //self.musicVM.getMusic()
         self.musicVM.bind {
          print("Test: 2")
@@ -110,24 +110,20 @@ class Tab2ViewController: UIViewController {
         }
         title = "FAVORITES"
         self.setTableView()
-        
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.table.reloadData()
         }
     }
-
-    
     func setTableView() {
        
         self.view.addSubview(self.PokeImage2)
-         self.PokeImage2.bindToSuperView()
+        self.PokeImage2.bindToSuperView()
       
-     self.view.addSubview(self.table)
+        self.view.addSubview(self.table)
     
-     self.table.bindToSuperView()
+        self.table.bindToSuperView()
 
     }
 }
@@ -158,10 +154,14 @@ extension Tab2ViewController: UITableViewDataSource {
 extension Tab2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailView = DetailViewController(vm: MusicViewModel(networkManager: NetworkManager()))
-//        guard detailView.configure2(musicVM: self.musicVM, index: indexPath.row, musicVM1: self.musicVM1 as! MusicViewModel) == nil else { return}
+        DispatchQueue.main.async {
+            self.table.reloadData()
+        }
+        if self.musicVM.getalbumInfo().count != 0{
         detailView.configure2(musicVM: self.musicVM, index: indexPath.row, musicVM1: self.musicVM1 as! MusicViewModel)
         
         self.navigationController?.pushViewController(detailView, animated: true)
+        }
     }
 }
 //extension Tab2ViewController: MusicTableViewCellDelegate{
@@ -242,7 +242,7 @@ class Tab1ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .systemBackground
         title = "TOP 100"
         self.musicVM.getMusic()
         self.musicVM.bind {
