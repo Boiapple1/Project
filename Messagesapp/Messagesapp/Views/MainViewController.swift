@@ -11,9 +11,6 @@ import BaronTalk
 import FirebaseAuth
 
 class MainViewController: UIViewController {
-    var conversations: [Message] = []
-    var messagess =  BaronTalk.MessagesController()
-    
     private let tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .white

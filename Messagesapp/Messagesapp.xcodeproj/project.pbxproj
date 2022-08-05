@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0284692D2899A6BE00125898 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0284692C2899A6BE00125898 /* JGProgressHUD */; };
 		028469332899F79D00125898 /* BaronTalk in Frameworks */ = {isa = PBXBuildFile; productRef = 028469322899F79D00125898 /* BaronTalk */; };
-		02846938289A114F00125898 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02846937289A114F00125898 /* GoogleService-Info.plist */; };
 		0284693B289A1DBD00125898 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0284693A289A1DBD00125898 /* FirebaseAuth */; };
 		0284693E289A254100125898 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0284693D289A254100125898 /* Model.swift */; };
 		02AD2E552898D9D90043001E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2E542898D9D90043001E /* AppDelegate.swift */; };
@@ -24,10 +23,10 @@
 		02EEEA06289AAAC500C61257 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA05289AAAC500C61257 /* ChatTableViewCell.swift */; };
 		02EEEA09289B1AF300C61257 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02EEEA08289B1AF300C61257 /* MessageKit */; };
 		02EEEA0B289B1CB000C61257 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA0A289B1CB000C61257 /* ChatViewController.swift */; };
+		02EEEA0F289CB20D00C61257 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02EEEA0E289CB20D00C61257 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02846937289A114F00125898 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0284693D289A254100125898 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		02AD2E512898D9D90043001E /* Messagesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AD2E542898D9D90043001E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		02AD2E732899977D0043001E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		02EEEA05289AAAC500C61257 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		02EEEA0A289B1CB000C61257 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		02EEEA0E289CB20D00C61257 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		02AD2E532898D9D90043001E /* Messagesapp */ = {
 			isa = PBXGroup;
 			children = (
-				02846937289A114F00125898 /* GoogleService-Info.plist */,
+				02EEEA0E289CB20D00C61257 /* GoogleService-Info.plist */,
 				0284693C289A251A00125898 /* Model */,
 				02AD2E692898DAC30043001E /* Resources */,
 				02AD2E682898DAB90043001E /* Views */,
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02AD2E612898D9DB0043001E /* LaunchScreen.storyboard in Resources */,
-				02846938289A114F00125898 /* GoogleService-Info.plist in Resources */,
+				02EEEA0F289CB20D00C61257 /* GoogleService-Info.plist in Resources */,
 				02AD2E5E2898D9DB0043001E /* Assets.xcassets in Resources */,
 				02AD2E5C2898D9D90043001E /* Main.storyboard in Resources */,
 			);

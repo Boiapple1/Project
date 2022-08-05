@@ -33,9 +33,9 @@ struct receiver: SenderType{
 class ChatViewController: MessagesViewController {
     private var messa = [mesa]()
     private var messages = [Message]()
-    public var conversations: [Message] = []
-    var messagess =  BaronTalk.MessagesController()
-    
+    var messagess = MessagesController()
+    var count: Int?
+    var i = 0
     
     
     override func viewDidLoad() {
@@ -43,21 +43,53 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
+        self.messagess.getData()
+        self.listenForMessages(with: self.messagess,shouldScrollToBottom: true)
         messageInputBar.delegate = self
+        messagesCollectionView.backgroundColor = . systemYellow
+        messagesCollectionView.refreshControl = UIRefreshControl()
+        messagesCollectionView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        title = "GroupChat"
         
-        view.backgroundColor = .white
-        title = "Messages"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh Chat",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didRefresh))
+       
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
+                                                          style: .done,
+                                                          target: self,
+                                                          action: #selector(didTapLogOut))
+//
+//        self.messagess.bindUpdating{
+//            DispatchQueue.main.async {
+//                self.messagesCollectionView.reloadData()
+//                self.messagesCollectionView.refreshControl = UIRefreshControl()
+//                self.listenForMessages(with: self.messagess,shouldScrollToBottom: true)
+//               // self.messagess.refreshData()
+//            }
+//        }
 
     }
+    
 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.messagess.getData()
         messageInputBar.inputTextView.becomeFirstResponder()
-        listenForMessages(shouldScrollToBottom: true)
-       
+        self.listenForMessages(with: self.messagess,shouldScrollToBottom: true)
+
     }
+    @objc private func didPullToRefresh(){
+        self.messagess.getData()
+        self.listenForMessages(with: self.messagess,shouldScrollToBottom: true)
+        DispatchQueue.main.async {
+            self.messagesCollectionView.refreshControl?.endRefreshing()
+            
+              }
+    }
+
     var selfSender: Sender? {
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
             return nil
@@ -70,34 +102,47 @@ class ChatViewController: MessagesViewController {
     
 
     
-    private func listenForMessages(shouldScrollToBottom: Bool) {
-        self.messagess.getContent(completion: { [weak self] result in
-            switch result {
-            case .success(let messages):
-                print("success in getting messages: \(messages)")
-                guard !messages.isEmpty else {
-                    print("messages are empty")
-                    return
-                }
-                self?.messages = messages
-                
-                for mes in messages {
-                    
-                    self?.messa.append(mesa(sender: receiver(senderId: mes.userSenderId, displayName: "someone"), messageId: mes.messageId, sentDate: Date(), kind: .text("\(mes.userSenderId)\n \(mes.content)")))
-                }
-                DispatchQueue.main.async {
-                    self?.messagesCollectionView.reloadDataAndKeepOffset()
+    private func listenForMessages(with mesas: MessagesAttributes,shouldScrollToBottom: Bool) {
+        DispatchQueue.main.async {
+            let a = mesas.count
 
+              for n in 0..<a{
+                  self.messa.append(mesa(sender: receiver(senderId: mesas.userSenderId(for: n) ?? "", displayName: "someone"), messageId: mesas.messageId(for: n) ?? "", sentDate: Date(), kind: .text("\(mesas.userSenderId(for: n) ?? "")\n \(mesas.content(for: n) ?? "")")))
+                  
+              }
+           
+        }
+
+     DispatchQueue.main.async {
+            
+                    self.messagesCollectionView.reloadDataAndKeepOffset()
+                    
                     if shouldScrollToBottom {
-                        self?.messagesCollectionView.scrollToLastItem()
+                        self.messagesCollectionView.scrollToLastItem()
                     }
                 }
-            case .failure(let error):
-                print("failed to get messages: \(error)")
+       
+    }
+    
+    @objc
+    func didRefresh(){
+        
+
+        self.navigationController?.dismiss(animated: false, completion: nil)
+
+    }
+    @objc
+    func didTapLogOut(){
+        
+        AuthHandler.logOut(completion: { [weak self] in
+            guard let strongSelf = self else {
+                return
             }
+
+        }, error: {_ in
+            print("Failed to log out")
         })
     }
-
     
 }
 
@@ -108,20 +153,13 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             let selfSender = self.selfSender else {
                 return
         }
-
         print("Sending: \(text)")
-
-        let mmessage = Message(content: "\(text)", timestamp: "time", messageId: "0", userSenderId: "\(selfSender)")
-
-        // Send Message
-   
-
-            // append to existing conversation data
         let messagesucces = self.messagess.sendMessage(message: "\(text)", userSenderId: self.selfSender?.senderId ?? "")
      
    
         if messagesucces == nil {
-            self.listenForMessages(shouldScrollToBottom: true)
+            self.listenForMessages(with: messagess,shouldScrollToBottom: true)
+            self.messagess.getData()
                     self.messageInputBar.inputTextView.text = nil
                     print("message sent")
                 }
@@ -140,6 +178,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
 
 extension ChatViewController:MessagesLayoutDelegate, MessagesDisplayDelegate, MessagesDataSource{
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+    
         return messa[indexPath.section]
     }
     
@@ -151,23 +190,6 @@ var currentSender: SenderType {
     return send
     
 }
-
-func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Message {
-    return messages[indexPath.section]
-}
-    
-    private func backgroundColor(for message: Message, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        let sender = message
-        if sender.userSenderId == selfSender?.senderId {
-            // our message that we've sent
-            return .link
-        }
-
-        return .secondarySystemBackground
-    }
-    
-    
-
 func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
     return messa.count
 }
