@@ -60,15 +60,6 @@ class ChatViewController: MessagesViewController {
                                                           style: .done,
                                                           target: self,
                                                           action: #selector(didTapLogOut))
-//
-//        self.messagess.bindUpdating{
-//            DispatchQueue.main.async {
-//                self.messagesCollectionView.reloadData()
-//                self.messagesCollectionView.refreshControl = UIRefreshControl()
-//                self.listenForMessages(with: self.messagess,shouldScrollToBottom: true)
-//               // self.messagess.refreshData()
-//            }
-//        }
 
     }
     
