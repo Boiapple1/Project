@@ -22,6 +22,9 @@
 }
 
 - (void)testLaunch {
+    
+
+    
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
 
@@ -33,5 +36,7 @@
     attachment.lifetime = XCTAttachmentLifetimeKeepAlways;
     [self addAttachment:attachment];
 }
+
+
 
 @end

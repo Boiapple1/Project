@@ -33,7 +33,7 @@ class NasaViewModelTest: XCTestCase {
             
         }
         self.viewModel?.fetchNasainfo()
-        wait(for: [expectation], timeout: 400000)
+        wait(for: [expectation], timeout: 4)
         
         XCTAssert(((self.viewModel?.copyright(for: 0)) != nil))
         // Assert

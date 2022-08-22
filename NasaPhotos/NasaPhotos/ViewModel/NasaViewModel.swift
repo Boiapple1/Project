@@ -56,9 +56,7 @@ class NasaViewModel : NSObject{
            
                     self?.nasa.append(nasa)
                     self?.nasa = self?.nasa.sorted(by: {$0.date.compare($1.date) == .orderedDescending}) ?? []
-                
-                
-//                self?.nasa = self?.nasa.sorted(by: {$0.date.compare($1.date) == .orderedDescending}) ?? []
+
 
             }
 

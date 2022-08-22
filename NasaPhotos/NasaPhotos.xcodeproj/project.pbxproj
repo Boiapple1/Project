@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02EEEA21289E341E00C61257 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA20289E341E00C61257 /* AppDelegate.m */; };
 		02EEEA24289E341E00C61257 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA23289E341E00C61257 /* SceneDelegate.m */; };
-		02EEEA27289E341E00C61257 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA26289E341E00C61257 /* ViewController.m */; };
 		02EEEA2A289E341E00C61257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EEEA28289E341E00C61257 /* Main.storyboard */; };
 		02EEEA2C289E342000C61257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EEEA2B289E342000C61257 /* Assets.xcassets */; };
 		02EEEA2F289E342000C61257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EEEA2D289E342000C61257 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,7 @@
 		02EEEA74289E40F500C61257 /* NasaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA73289E40F500C61257 /* NasaViewController.m */; };
 		02EEEA76289E411100C61257 /* NasaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA75289E411100C61257 /* NasaTableViewCell.m */; };
 		02EEEA79289F3CB400C61257 /* NasaViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA78289F3CB400C61257 /* NasaViewModelTest.swift */; };
+		02EEEA8128A1457B00C61257 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EEEA8028A1457A00C61257 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +48,6 @@
 		02EEEA20289E341E00C61257 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		02EEEA22289E341E00C61257 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		02EEEA23289E341E00C61257 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		02EEEA25289E341E00C61257 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		02EEEA26289E341E00C61257 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		02EEEA29289E341E00C61257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02EEEA2B289E342000C61257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EEEA2E289E342000C61257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +70,8 @@
 		02EEEA75289E411100C61257 /* NasaTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NasaTableViewCell.m; sourceTree = "<group>"; };
 		02EEEA77289F3CB400C61257 /* NasaPhotosTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NasaPhotosTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		02EEEA78289F3CB400C61257 /* NasaViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewModelTest.swift; sourceTree = "<group>"; };
+		02EEEA7F28A1457A00C61257 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		02EEEA8028A1457A00C61257 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,6 @@
 				02EEEA20289E341E00C61257 /* AppDelegate.m */,
 				02EEEA22289E341E00C61257 /* SceneDelegate.h */,
 				02EEEA23289E341E00C61257 /* SceneDelegate.m */,
-				02EEEA25289E341E00C61257 /* ViewController.h */,
-				02EEEA26289E341E00C61257 /* ViewController.m */,
 				02EEEA28289E341E00C61257 /* Main.storyboard */,
 				02EEEA2B289E342000C61257 /* Assets.xcassets */,
 				02EEEA2D289E342000C61257 /* LaunchScreen.storyboard */,
@@ -185,6 +183,8 @@
 			children = (
 				02EEEA63289E3A0600C61257 /* NasaViewController.h */,
 				02EEEA73289E40F500C61257 /* NasaViewController.m */,
+				02EEEA7F28A1457A00C61257 /* DetailViewController.h */,
+				02EEEA8028A1457A00C61257 /* DetailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -347,10 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02EEEA72289E40D500C61257 /* Nasa.m in Sources */,
-				02EEEA27289E341E00C61257 /* ViewController.m in Sources */,
 				02EEEA21289E341E00C61257 /* AppDelegate.m in Sources */,
 				02EEEA6E289E408F00C61257 /* NetworkManager.m in Sources */,
 				02EEEA32289E342000C61257 /* main.m in Sources */,
+				02EEEA8128A1457B00C61257 /* DetailViewController.m in Sources */,
 				02EEEA69289E3ACD00C61257 /* NasaViewModel.swift in Sources */,
 				02EEEA76289E411100C61257 /* NasaTableViewCell.m in Sources */,
 				02EEEA24289E341E00C61257 /* SceneDelegate.m in Sources */,

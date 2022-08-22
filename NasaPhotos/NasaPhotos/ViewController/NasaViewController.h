@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NasaViewController : UIViewController <UITableViewDataSource, UITableViewDataSourcePrefetching>
+@interface NasaViewController : UIViewController <UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate>
 
 
 

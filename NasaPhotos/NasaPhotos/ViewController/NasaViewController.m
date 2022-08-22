@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NasaViewController.h"
+#import "DetailViewController.h"
 #import "NetworkManager.h"
 #import "Nasa.h"
 #import "NasaTableViewCell.h"
@@ -26,8 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.table.delegate = self;
     [self setUp];
-    
+    self.navigationItem.title = @"Nasa Picture Of The Day";
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     [self.NasaVM bindWithUpdateHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.table reloadData];
@@ -79,8 +83,12 @@
     }
     
     [cell.titleLabel setText:[NSString stringWithFormat:@"Title: %@", [self.NasaVM titleFor:indexPath.row]]];
-    
-    [cell.dateLabel setText:[self.NasaVM dateFor:indexPath.row]];
+    NSString *dateString = [NSString stringWithFormat:@"%@", [self.NasaVM dateFor:indexPath.row]];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [format dateFromString:dateString];
+    [format setDateFormat:@"MM-dd-yyyy"];
+    [cell.dateLabel setText:[format stringFromDate:date]];
     [cell.copyrightLabel setText:[NSString stringWithFormat:@"Copyright:\n%@", [self.NasaVM copyrightFor:indexPath.row]]];
     
     [self.NasaVM imageFor:indexPath.row completion:^(UIImage * _Nullable poster) {
@@ -97,8 +105,16 @@
     NSIndexPath* lastIndexPath = [NSIndexPath indexPathForRow:self.NasaVM.count-1  inSection:0];
     if ([indexPaths containsObject:lastIndexPath]) {
      [self.NasaVM fetchNasainfo];
-//        [self requestNextPage];
+
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    DetailViewController *controler = [[DetailViewController alloc] init];
+    [self.navigationController pushViewController:controler animated:YES];
+    
+    
 }
 
 @end
