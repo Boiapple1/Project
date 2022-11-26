@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "5124_PlanToys_STACKING_RING_Learning_and_Education_Fine_Motor_Mathematical_Coordination_Language_and_Communications_18m_Wooden_toys_Education_toys_Safety_Toys_Non-toxic_0.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
