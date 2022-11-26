@@ -18,10 +18,10 @@ struct AnimalsView<T: AnimalsListViewModelType>: View {
             AsyncImage(url: NetworkParams.AnimalPic(self.AnimalsListVM.Animals[index].imageLink ).url) { realImage in
                 realImage
                     .resizable()
-                    .frame(width: 300, height: 300, alignment: .center)
+                    .frame(width: 300, height: 250, alignment: .center)
             } placeholder: {
                 ProgressView()
-                    .frame(width: 150, height: 180, alignment: .center)
+                    .frame(width: 300, height: 250, alignment: .center)
             }
                 .padding([.top, .bottom, .trailing], 8)
             VStack{
@@ -31,8 +31,10 @@ struct AnimalsView<T: AnimalsListViewModelType>: View {
             }
                 .padding([.top, .bottom, .trailing], 8)
         }
+        
         .listRowInsets(EdgeInsets(top: 0, leading: 2, bottom: 0, trailing: 0))
     }
+    
 }
 
 

@@ -27,12 +27,15 @@ struct ContentView<T: AnimalsListViewModelType>: View {
                                     self.AnimalsListVM.requestMoviesIfNeeded(index: index)
                                 }
                         }
+                        
                     }
-                            
+                    
                     if self.AnimalsListVM.isLoading {
                         ProgressView()
                     }
+                       
                 }
+
 
             }
         }

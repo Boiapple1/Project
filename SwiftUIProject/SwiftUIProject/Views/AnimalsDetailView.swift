@@ -16,7 +16,11 @@ struct AnimalsDetailView<T: AnimalsListViewModelType>: View {
         
             AnimalsView(AnimalsListVM: self.AnimalsVM, index: index)
             Text("Animal Type: \(self.AnimalsVM.Animals[index].animalType)\nLifespan: \(self.AnimalsVM.Animals[index].lifespan)\nActive During: \(self.AnimalsVM.Animals[index].activeTime)\nDiet:\(self.AnimalsVM.Animals[index].diet)\nLength Min: \(self.AnimalsVM.Animals[index].lengthMin)\nLength Max: \(self.AnimalsVM.Animals[index].lengthMax)\nWeight Min: \(self.AnimalsVM.Animals[index].weightMin)\nWeight Max: \(self.AnimalsVM.Animals[index].weightMax)\nHabitat: \(self.AnimalsVM.Animals[index].habitat)")
-            .colorMultiply(.blue)
+            .background(.ultraThickMaterial)
+                        
+                        
+                        
+
                 .fixedSize(horizontal: false, vertical: true)
                 
 
